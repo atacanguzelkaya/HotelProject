@@ -1,4 +1,4 @@
-﻿using HotelProject.WebUI.Models.Staff;
+﻿using HotelProject.WebUI.Dtos.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
-	public class StaffController : Controller
+    public class StaffController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 
@@ -22,7 +22,7 @@ namespace HotelProject.WebUI.Controllers
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<StaffDto>>(jsonData);
 				return View(values);
 			}
 			return View();
@@ -33,7 +33,7 @@ namespace HotelProject.WebUI.Controllers
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> AddStaff(AddStaffViewModel model)
+		public async Task<IActionResult> AddStaff(CreateStaffDto model)
 		{
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(model);
@@ -64,14 +64,14 @@ namespace HotelProject.WebUI.Controllers
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsonData);
+				var values = JsonConvert.DeserializeObject<UpdateStaffDto>(jsonData);
 				return View(values);
 			}
 			return View();
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> UpdateStaff(UpdateStaffViewModel model)
+		public async Task<IActionResult> UpdateStaff(UpdateStaffDto model)
 		{
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(model);
@@ -92,7 +92,7 @@ namespace HotelProject.WebUI.Controllers
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<GetStaffViewModel>(jsonData);
+				var values = JsonConvert.DeserializeObject<GetStaffDto>(jsonData);
 				return View(values);
 			}
 			return View();

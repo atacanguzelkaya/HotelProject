@@ -1,6 +1,6 @@
-﻿namespace HotelProject.WebUI.Models.Staff;
+﻿namespace HotelProject.WebUI.Dtos.Staff;
 
-public class StaffViewModel
+public class StaffDto
 {
     public int StaffId { get; set; }
     public string Name { get; set; }
