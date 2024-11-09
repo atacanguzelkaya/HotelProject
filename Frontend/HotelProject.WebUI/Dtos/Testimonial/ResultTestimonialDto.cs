@@ -1,7 +1,7 @@
 ﻿namespace HotelProject.WebUI.Dtos.Testimonial
 {
-    public class TestimonialDto
-    {
+    public class ResultTestimonialDto
+	{
         public int TestimonialId { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }

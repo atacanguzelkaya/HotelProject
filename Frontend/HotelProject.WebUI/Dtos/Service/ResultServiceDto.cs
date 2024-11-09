@@ -1,6 +1,6 @@
 ﻿namespace HotelProject.WebUI.Dtos.Service
 {
-    public class ServiceDto
+    public class ResultServiceDto
     {
         public int ServiceId { get; set; }
         public string ServiceIcon { get; set; }
