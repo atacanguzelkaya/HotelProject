@@ -7,18 +7,18 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>Service Title</th>
-        <th>Delete</th>
-        <th>Update</th>
+        <th>Hizmet Başlığı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <th>@item.ServiceId</th>
             <td>@item.Title</td>
-            <td><a href="/Service/DeleteService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a></td>
-            <td><a href="/Service/UpdateService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-success">Update</a></td>
+            <td><a href="/Service/DeleteService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+            <td><a href="/Service/UpdateService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
         </tr>
     }
 </table>
-<a href="/Service/AddService/" class="btn mb-1 btn-rounded btn-outline-info">Add Service</a>
+<a href="/Service/AddService/" class="btn mb-1 btn-rounded btn-outline-info">Yeni Hizmet Girişi</a>

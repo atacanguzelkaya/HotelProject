@@ -6,17 +6,17 @@
 
 <form method="post">
     <input type="hidden" asp-for="ServiceId" />
-    <label>Service Icon</label>
+    <label>Hizmet İkonu</label>
     <input type="text" asp-for="ServiceIcon" class="form-control" />
     <span asp-validation-for="ServiceIcon" class="text-info"></span>
     <br />
-    <label>Service Title</label>
+    <label>Hizmet Başlığı</label>
     <input type="text" asp-for="Title" class="form-control" />
     <span asp-validation-for="Title" class="text-info"></span>
     <br />
-    <label>Description</label>
+    <label>Açıklama</label>
     <input type="text" asp-for="Description" class="form-control" />
     <span asp-validation-for="Description" class="text-info"></span>
     <br />
-    <button class="btn btn-primary">Update Service</button>
+    <button class="btn btn-primary">Hizmeti Güncelle</button>
 </form>
