@@ -20,4 +20,21 @@ public class Context:IdentityDbContext<AppUser, AppRole, int>
 	{
 		optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;initial catalog=HotelProjectDb;integrated security=true");
 	}
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<Room>(entry =>
+        {
+            entry.ToTable("Rooms", tb => tb.HasTrigger("RoomsCountTrigger"));
+        });
+        builder.Entity<Staff>(entry =>
+        {
+            entry.ToTable("Staffs", tb => tb.HasTrigger("StaffsCountTrigger"));
+        });
+        builder.Entity<Guest>(entry =>
+        {
+            entry.ToTable("Guests", tb => tb.HasTrigger("GuestsCountTrigger"));
+        });
+    }
 }
