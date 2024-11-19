@@ -11,4 +11,10 @@ public class EfSendMessageDal : GenericRepository<SendMessage>, ISendMessageDal
     {
         
     }
+
+	public int GetSendMessageCount()
+	{
+		var context = new Context();
+		return context.SendMessages.Count();
+	}
 }

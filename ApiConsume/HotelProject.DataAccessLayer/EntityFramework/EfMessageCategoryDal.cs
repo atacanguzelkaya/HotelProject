@@ -5,16 +5,9 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.DataAccessLayer.EntityFramework;
 
-public class EfContactDal : GenericRepository<Contact>, IContactDal
+public class EfMessageCategoryDal : GenericRepository<MessageCategory>, IMessageCategoryDal
 {
-    public EfContactDal(Context context) : base(context)
+    public EfMessageCategoryDal(Context context) : base(context)
     {
-        
     }
-
-	public int GetContactCount()
-	{
-		var context = new Context();
-		return context.Contacts.Count();
-	}
 }

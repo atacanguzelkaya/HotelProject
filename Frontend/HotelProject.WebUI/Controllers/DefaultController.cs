@@ -1,11 +1,13 @@
 ﻿using HotelProject.WebUI.Dtos.Subscribe;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
-	public class DefaultController : Controller
+    [AllowAnonymous]
+    public class DefaultController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 		public DefaultController(IHttpClientFactory httpClientFactory)
@@ -16,7 +18,11 @@ namespace HotelProject.WebUI.Controllers
 		{
 			return View();
 		}
-		[HttpGet]
+        public IActionResult Error()
+        {
+            return View();
+        }
+        [HttpGet]
 		public PartialViewResult _SubscribePartial()
 		{
 			return PartialView();

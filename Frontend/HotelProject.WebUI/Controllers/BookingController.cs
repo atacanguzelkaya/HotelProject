@@ -1,11 +1,12 @@
 ﻿using HotelProject.WebUI.Dtos.Booking;
-using HotelProject.WebUI.Dtos.Subscribe;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

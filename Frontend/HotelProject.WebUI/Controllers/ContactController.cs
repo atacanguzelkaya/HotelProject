@@ -1,4 +1,5 @@
 ﻿using HotelProject.WebUI.Dtos.Contact;
+using HotelProject.WebUI.Dtos.MessageCategory;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,18 +18,18 @@ namespace HotelProject.WebUI.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("http://localhost:3523/api/MessageCategory");
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:1650/api/MessageCategory");
 
-            //var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            //var values = JsonConvert.DeserializeObject<List<ResultMessageCategoryDto>>(jsonData);
-            //List<SelectListItem> values2 = (from x in values
-            //                                select new SelectListItem
-            //                                {
-            //                                    Text = x.MessageCategoryName,
-            //                                    Value = x.MessageCategoryID.ToString()
-            //                                }).ToList();
-            //ViewBag.v = values2;
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<ResultMessageCategoryDto>>(jsonData);
+            List<SelectListItem> values2 = (from x in values
+                                            select new SelectListItem
+                                            {
+                                                Text = x.MessageCategoryName,
+                                                Value = x.MessageCategoryId.ToString()
+                                            }).ToList();
+            ViewBag.messageCategory = values2;
 
             return View();
         }
