@@ -17,6 +17,7 @@ public class Context:IdentityDbContext<AppUser, AppRole, int>
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<SendMessage> SendMessages { get; set; }
     public DbSet<MessageCategory> MessageCategories { get; set; }
+    public DbSet<WorkLocation> WorkLocations { get; set; }
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
