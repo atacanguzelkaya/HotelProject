@@ -18,7 +18,12 @@ public class BookingManager : IBookingService
 		_bookingDal.Delete(t);
 	}
 
-	public Booking TGetById(int id)
+    public int TGetBookingCount()
+    {
+        return _bookingDal.GetBookingCount();
+    }
+
+    public Booking TGetById(int id)
 	{
 		return _bookingDal.GetById(id);
 	}
@@ -33,7 +38,12 @@ public class BookingManager : IBookingService
 		_bookingDal.Insert(t);
 	}
 
-	public void TUpdate(Booking t)
+    public List<Booking> TLast6Bookings()
+    {
+        return _bookingDal.Last6Bookings();
+    }
+
+    public void TUpdate(Booking t)
 	{
 		_bookingDal.Update(t);
 	}

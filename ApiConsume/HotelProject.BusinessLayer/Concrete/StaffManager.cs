@@ -28,12 +28,22 @@ public class StaffManager : IStaffService
 		return _staffDal.GetList();
 	}
 
-	public void TInsert(Staff t)
+    public int TGetStaffCount()
+    {
+        return _staffDal.GetStaffCount();
+    }
+
+    public void TInsert(Staff t)
 	{
 		_staffDal.Insert(t);
 	}
 
-	public void TUpdate(Staff t)
+    public List<Staff> TLast4Staff()
+    {
+        return _staffDal.Last4Staff();
+    }
+
+    public void TUpdate(Staff t)
 	{
 		_staffDal.Update(t);
 	}
