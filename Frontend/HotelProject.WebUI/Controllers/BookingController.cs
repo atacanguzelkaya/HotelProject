@@ -28,6 +28,8 @@ namespace HotelProject.WebUI.Controllers
         {
             createBookingDto.Status = "Onay Bekliyor";
             createBookingDto.Description = " ";
+            createBookingDto.City = " ";
+            createBookingDto.Country = " ";
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
