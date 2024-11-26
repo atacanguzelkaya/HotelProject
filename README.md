@@ -31,3 +31,12 @@ This project is a hotel reservation system developed using ASP.NET Core and MVC 
 - **Authentication**
 - **Mail Sending Processes with Mailkit**
 - **Fluent Validation**
+
+# **Homepage**
+   ![HotelProjectHomepage](https://github.com/atacanguzelkaya/HotelProject/blob/master/Images/Hotelier-ApiProje-Homepage.png?raw=true)
+   
+# **Rezervation Page** 
+   ![HotelProjectRezervation](https://github.com/atacanguzelkaya/HotelProject/blob/master/Images/Hotelier-ApiProje-Rezervation.png?raw=true)
+
+# **Admin Dashboard** 
+   ![HotelProjectAdminDashboard](https://github.com/atacanguzelkaya/HotelProject/blob/master/Images/Hotelier-ApiProje-AdminPanel-Dashboard.png?raw=true)
